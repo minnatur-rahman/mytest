@@ -15,31 +15,29 @@ class PlayerSeeder extends Seeder
     public function run(): void
     {
 
-         for($i=1; $i<=20; $i++){
+
+        $json = File::get(path:'database/json/players.json');
+        $players = collect(json_decode($json));
+
+        $players->each(function($player){
             player::create([
-                'name' => fake()->name(),
-                'email' => fake()->unique()->email(),
-                // 'age' => fake()->age(),
-                'city' => fake()->city()
+                'name' => $player->name,
+                'email' => $player->email,
+                'age' => $player->age,
+                'city'=> $player->city
             ]);
-
-         }
-
+        });
 
 
-
-
-
-        // $json = File::get(path:'database/json/players.json');
-        // $players = collect(json_decode($json));
-
-        // $players->each(function($player){
+        //  for($i=1; $i<=20; $i++){
         //     player::create([
-        //         'name' => $player->name,
-        //         'email' => $player->email
+        //         'name' => fake()->name(),
+        //         'email' => fake()->unique()->email(),
+        //         'age' => fake()->age(),
+        //         'city' => fake()->city()
         //     ]);
-        // });
 
+        //  }
 
 
     }

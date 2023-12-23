@@ -16,7 +16,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PlayerSeeder::class
         ]);
-        // \App\Models\User::factory(10)->create();
+
+
+        // \App\Models\player::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

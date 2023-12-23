@@ -14,10 +14,21 @@
         <div class="row">
             <div class="col-7">
               <table class="table table-bordered table-striped">
+
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+
                 @foreach ($data as $id => $user)
                     <tr>
+                        <td>{{$user->id}}</td>
                         <td>{{$user->name}} </td>
                         <td>{{$user->email}}</td>
+                        <td>{{$user->age}}</td>
                         <td>{{$user->city}}</td>
 
                     </tr>
