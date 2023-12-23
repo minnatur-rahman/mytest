@@ -21,6 +21,7 @@
                     <th>Email</th>
                     <th>Age</th>
                     <th>City</th>
+                    <th>View</th>
                 </tr>
 
                 @foreach ($data as $id => $user)
@@ -30,7 +31,7 @@
                         <td>{{$user->email}}</td>
                         <td>{{$user->age}}</td>
                         <td>{{$user->city}}</td>
-
+                        <td><a href=" {{route('view.player', $user->id )}} " class="btn btn-primary btn-sm">View</a></td>
                     </tr>
                     @endforeach
               </table>
