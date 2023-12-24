@@ -18,7 +18,7 @@ class PlayerController extends Controller
 
     public function singlePlayer(string $id){
         $player = DB::table('players')->where('id', $id)->get();
-        return view('player', $player);
+        return view('player', ['data' => $player]);
     }
 
 
