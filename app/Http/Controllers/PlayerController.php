@@ -9,7 +9,10 @@ class PlayerController extends Controller
 {
 
     public function showPlayer(){
-        $players = DB::table('players')->get();
+        $players = DB::table('players')
+                     ->where('city','Dhaka')
+                     ->where('age', '>', 30)
+                     ->get();
         // return $players;
 
        return view('allPlayers', ['data' => $players]);
