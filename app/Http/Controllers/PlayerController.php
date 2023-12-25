@@ -10,8 +10,8 @@ class PlayerController extends Controller
 
     public function showPlayer(){
         $players = DB::table('players')
+                     ->whereNotIn('city', ['dhake', 'gaibandha'])
 
-                     ->where('name', 'like', 'A%')
                      ->get();
         // return $players;
 
