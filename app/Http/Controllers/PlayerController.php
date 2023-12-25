@@ -11,7 +11,7 @@ class PlayerController extends Controller
     public function showPlayer(){
         $players = DB::table('players')
 
-                     ->where('name', 'like', 'S%')
+                     ->where('name', 'like', 'A%')
                      ->get();
         // return $players;
 
