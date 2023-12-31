@@ -9,10 +9,13 @@ class PlayerController extends Controller
 {
 
     public function showPlayer(){
-        $players = DB::table('players')->get();
-        // return $players;
+        $players = DB::table('players')
+                            ->oldest()
+                            ->first();
 
-       return view('allPlayers', ['data' => $players]);
+        return $players;
+
+    //    return view('allPlayers', ['data' => $players]);
 
 
 }
@@ -20,8 +23,8 @@ class PlayerController extends Controller
 
     public function singlePlayer(string $id){
         $player = DB::table('players')->where('id', $id)->get();
-        return $player;
-        // return view('player', ['data' => $player]);
+
+        return view('player', ['data' => $player]);
     }
 
 
