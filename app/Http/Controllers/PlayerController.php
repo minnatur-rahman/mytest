@@ -9,20 +9,20 @@ class PlayerController extends Controller
 {
 
     public function showPlayer(){
-        $players = DB::table('players')
-                     ->whereNotIn('city', ['dhake', 'gaibandha'])
-
-                     ->get();
+        $players = DB::table('players')->get();
         // return $players;
 
        return view('allPlayers', ['data' => $players]);
+
+
+}
+
+
+    public function singlePlayer(string $id){
+        $player = DB::table('players')->where('id', $id)->get();
+        return $player;
+        // return view('player', ['data' => $player]);
     }
-
-
-    // public function singlePlayer(string $id){
-    //     $player = DB::table('players')->where('id', $id)->get();
-    //     return view('player', ['data' => $player]);
-    // }
 
 
 }
