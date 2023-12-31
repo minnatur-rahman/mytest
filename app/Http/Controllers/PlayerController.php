@@ -10,12 +10,12 @@ class PlayerController extends Controller
 
     public function showPlayer(){
         $players = DB::table('players')
-                              ->sum('age');
+                              ->get();
 
 
-        return $players;
+        // return $players;
 
-    //    return view('allPlayers', ['data' => $players]);
+       return view('allPlayers', ['data' => $players]);
 
 
 }
