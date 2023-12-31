@@ -10,8 +10,8 @@ class PlayerController extends Controller
 
     public function showPlayer(){
         $players = DB::table('players')
-                            ->oldest()
-                            ->first();
+                              ->sum('age');
+
 
         return $players;
 
