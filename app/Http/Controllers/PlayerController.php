@@ -28,4 +28,48 @@ class PlayerController extends Controller
     }
 
 
+
+    public function addUser(){
+        $user = DB::table('players')->insert([
+
+            [
+
+                'name' =>  'Limon Kumar',
+                'email' => 'adi@gmail.com',
+                'age' => 44,
+                'city' => 'mumbi',
+                'created_at' => now(),
+                'updated_at' => now()
+
+            ],
+            [
+
+                'name' =>  'Ruhi Kumar',
+                'email' => 'shak@gmail.com',
+                'age' => 31,
+                'city' => 'panama',
+                'created_at' => now(),
+                'updated_at' => now()
+
+            ],
+            [
+
+                'name' =>  'Shiblu Kumar',
+                'email' => 'shiblu@gmail.com',
+                'age' => 22,
+                'city' => 'gaza',
+                'created_at' => now(),
+                'updated_at' => now()
+
+            ],
+
+
+        ]);
+
+        if($user){
+            echo '<h1>Data Add Successfully</h1>';
+        }
+    }
+
+
 }
