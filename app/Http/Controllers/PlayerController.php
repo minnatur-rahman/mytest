@@ -30,41 +30,36 @@ class PlayerController extends Controller
 
 
     public function addUser(){
-        $player = DB::table('players')->insert(
+        $player = DB::table('players')->insert([
 
-            [
-
-                'name' =>  'Limon Kumar',
-                'email' => 'adi@gmail.com',
-                'age' => 44,
-                'city' => 'mumbi',
+                [
+                'name' =>  'Shown Kumar',
+                'email' => 'adil@gmail.com',
+                'age' => 42,
+                'city' => 'konia',
                 'created_at' => now(),
                 'updated_at' => now()
-
-            ]
-            // [
-
-            //     'name' =>  'Ruhi Kumar',
-            //     'email' => 'shak@gmail.com',
-            //     'age' => 31,
-            //     'city' => 'panama',
-            //     'created_at' => now(),
-            //     'updated_at' => now()
-
-            // ],
-            // [
-
-            //     'name' =>  'Shiblu Kumar',
-            //     'email' => 'shiblu@gmail.com',
-            //     'age' => 22,
-            //     'city' => 'gaza',
-            //     'created_at' => now(),
-            //     'updated_at' => now()
-
-            // ]
+                ],
+                [
+                'name' =>  'Rajon Kumar',
+                'email' => 'rajon@gmail.com',
+                'age' => 34,
+                'city' => 'rajstaha',
+                'created_at' => now(),
+                'updated_at' => now()
+                ],
+                [
+                'name' =>  'shojib Kumar',
+                'email' => 'shojib@gmail.com',
+                'age' => 23,
+                'city' => 'chandigar',
+                'created_at' => now(),
+                'updated_at' => now()
+                ],
 
 
-        );
+
+        ]);
 
         if($player){
             echo '<h1>Data Add Successfully</h1>';

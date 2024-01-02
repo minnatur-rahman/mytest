@@ -11,8 +11,6 @@ Route::get('/player/{id}', [PlayerController::class, 'singlePlayer'])->name('vie
 Route::get('/add', [PlayerController::class, 'addUser']);
 
 
-
-
 // Route::get('/', function () {
 //     return view('welcome');
 // });
