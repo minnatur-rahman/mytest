@@ -30,39 +30,27 @@ class PlayerController extends Controller
 
 
     public function addUser(){
-        $player = DB::table('players')->insert([
+        $player = DB::table('players')->upsert(
 
                 [
                 'name' =>  'Shown Kumar',
-                'email' => 'adil@gmail.com',
-                'age' => 42,
-                'city' => 'konia',
-                'created_at' => now(),
-                'updated_at' => now()
+                'email' => 'abc@gmail.com',
+                'age' => 22,
+                'city' => 'dhaka',
+
                 ],
-                [
-                'name' =>  'Rajon Kumar',
-                'email' => 'rajon@gmail.com',
-                'age' => 34,
-                'city' => 'rajstaha',
-                'created_at' => now(),
-                'updated_at' => now()
-                ],
-                [
-                'name' =>  'shojib Kumar',
-                'email' => 'shojib@gmail.com',
-                'age' => 23,
-                'city' => 'chandigar',
-                'created_at' => now(),
-                'updated_at' => now()
-                ],
+                ['email'],
+                ['city']
 
 
 
-        ]);
+
+        );
 
         if($player){
             echo '<h1>Data Add Successfully</h1>';
+        }else{
+            echo'<h1>Data Not Added</h1>';
         }
     }
 
