@@ -39,7 +39,7 @@
                         <td>{{$user->city}}</td>
                         <td><a href=" {{route('view.player', $user->id )}} " class="btn btn-primary btn-sm">View</a></td>
                         <td><a href=" {{route('view.delete', $user->id )}} " class="btn btn-danger btn-sm">Delete</a></td>
-                        <td><a href="" class="btn btn-warning btn-sm">Updade</a></td>
+                        <td><a href="{{route('update.page', $user->id)}}" class="btn btn-warning btn-sm">Updade</a></td>
                     </tr>
                     @endforeach
               </table>

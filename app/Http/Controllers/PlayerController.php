@@ -50,7 +50,9 @@ class PlayerController extends Controller
     }
 
     public function updatePage(string $id){
-
+        // $player = DB::table('players')->where('id', $id)->get();
+        $player = DB::table('players')->find($id);
+        return view('updatePlayer', ['data' => $player]);
     }
 
 

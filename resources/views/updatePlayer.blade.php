@@ -16,19 +16,19 @@
                 @csrf
                 <div class="mb-3">
                     <label for="" class="form-lable">Name</label>
-                    <input type="text" class="form-control" name="playerName">
+                    <input type="text" value"{{ $data->name }}"  class="form-control" name="playerName">
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-lable">Email</label>
-                    <input type="text" class="form-control" name="playerEmail">
+                    <input type="text" value"{{ $data->email }}" class="form-control" name="playerEmail">
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-lable">Age</label>
-                    <input type="text" class="form-control" name="playerAge">
+                    <input type="text"  value"{{ $data->age }}" class="form-control" name="playerAge">
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-lable">City</label>
-                    <input type="text" class="form-control" name="playerCity">
+                    <input type="text" value"{{ $data->city }}" class="form-control" name="playerCity">
                 </div>
                      <button type="submit" class="btn btn-primary btn-sm">Update</button>
               </form>
