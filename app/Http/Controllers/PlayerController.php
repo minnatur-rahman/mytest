@@ -49,6 +49,10 @@ class PlayerController extends Controller
         }
     }
 
+    public function updatePage(string $id){
+
+    }
+
 
     public function updatePlayer(){
         $player = DB::table('players')
