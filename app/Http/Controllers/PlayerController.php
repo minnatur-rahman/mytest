@@ -30,22 +30,32 @@ class PlayerController extends Controller
 
 
     public function addUser(){
-        $player = DB::table('players')->upsert(
+        $player = DB::table('players')
+                      ->insertGetId(
 
                 [
-                'name' =>  'Shown Kumar',
-                'email' => 'abc@gmail.com',
-                'age' => 22,
-                'city' => 'dhaka',
+                'name' =>  'Amitav Kumar',
+                'email' => 'ami@gmail.com',
+                'age' => 24,
+                'city' => 'puna',
 
-                ],
-                ['email'],
-                ['city']
+                ]
+               );
+
+               return $player;
+
+        // if($player){
+        //     echo '<h1>Data Add Successfully</h1>';
+        // }else{
+        //     echo'<h1>Data Not Added</h1>';
+        // }
+    }
 
 
-
-
-        );
+    public function updatePlayer(){
+        $player = DB::table('players')
+                        ->where('id', 4)
+                        ->decrement('age', 10, ['city' => 'josori']);
 
         if($player){
             echo '<h1>Data Add Successfully</h1>';
@@ -53,6 +63,5 @@ class PlayerController extends Controller
             echo'<h1>Data Not Added</h1>';
         }
     }
-
 
 }
