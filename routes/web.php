@@ -4,19 +4,24 @@ use App\Http\Controllers\PlayerController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [PlayerController::class, 'showPlayer'])->name('home');
+Route::controller(PlayerController::class)->group(function(){
+       Route::get('/', 'showPlayer')->name('home');
 
-Route::get('/player/{id}', [PlayerController::class, 'singlePlayer'])->name('view.player');
+       Route::get('/player/{id}', 'singlePlayer')->name('view.player');
 
-Route::post('/add', [PlayerController::class, 'addUser'])->name('addPlayer');
+       Route::post('/add', 'addUser')->name('addPlayer');
 
-Route::get('/update', [PlayerController::class, 'updatePlayer']);
+       Route::get('/update', 'updatePlayer');
+       Route::get('/updatePage/{id}', 'updatePage')->name('update.page');
 
-Route::get('/delete/{id}', [PlayerController::class, 'deletePlayer'])->name('view.delete');
+       Route::get('/delete/{id}', 'deletePlayer')->name('view.delete');
+       Route::get('/deleteAll/', 'deleteAllPlayer');
 
-Route::get('/deleteAll/', [PlayerController::class, 'deleteAllPlayer']);
+       Route::view('newPlayer', '/addPlayer');
+});
 
-Route::view('newPlayer', '/addPlayer');
+
+
 
 
 // Route::get('/', function () {

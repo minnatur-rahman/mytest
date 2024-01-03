@@ -42,13 +42,11 @@ class PlayerController extends Controller
                 ]
                );
 
-               return $player;
-
-        // if($player){
-        //     echo '<h1>Data Add Successfully</h1>';
-        // }else{
-        //     echo'<h1>Data Not Added</h1>';
-        // }
+        if($player){
+            return redirect()->route('home');
+        }else{
+            echo'<h1>Data Not Added</h1>';
+        }
     }
 
 
