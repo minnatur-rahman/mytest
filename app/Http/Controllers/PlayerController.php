@@ -29,15 +29,15 @@ class PlayerController extends Controller
 
 
 
-    public function addUser(){
+    public function addUser(Request $req){
         $player = DB::table('players')
-                      ->insertGetId(
+                ->insert(
 
                 [
-                'name' =>  'Konok Kumar',
-                'email' => 'konok@gmail.com',
-                'age' => 22,
-                'city' => 'Vola',
+                'name' =>  $req->playerName,
+                'email' => $req->playerEmail,
+                'age' => $req->playerAge,
+                'city' => $req->playerCity,
 
                 ]
                );
