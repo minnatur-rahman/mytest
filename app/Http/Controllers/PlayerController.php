@@ -64,4 +64,20 @@ class PlayerController extends Controller
         }
     }
 
+    public function deletePlayer(string $id){
+        $player = DB::table('players')
+                        ->where('id', $id)
+                        ->delete();
+
+                        if($player){
+                            return redirect()->route('home');
+                       }
+    }
+
+    public function deleteAllPlayer(){
+        $player = DB::table('players')
+                     ->truncate();
+
+
+}
 }
