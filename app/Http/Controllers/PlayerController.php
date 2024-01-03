@@ -34,10 +34,10 @@ class PlayerController extends Controller
                       ->insertGetId(
 
                 [
-                'name' =>  'Amitav Kumar',
-                'email' => 'ami@gmail.com',
-                'age' => 24,
-                'city' => 'puna',
+                'name' =>  'Konok Kumar',
+                'email' => 'konok@gmail.com',
+                'age' => 22,
+                'city' => 'Vola',
 
                 ]
                );
