@@ -10,7 +10,7 @@ class PlayerController extends Controller
 
     public function showPlayer(){
         $players = DB::table('players')
-                              ->get();
+                              ->simplePaginate(4);
 
 
         // return $players;
