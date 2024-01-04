@@ -11,7 +11,7 @@ Route::controller(PlayerController::class)->group(function(){
 
        Route::post('/add', 'addUser')->name('addPlayer');
 
-       Route::get('/update/{id}', 'updatePlayer')->name('update.player');
+       Route::put('/update/{id}', 'updatePlayer')->name('update.player');
        Route::get('/updatePage/{id}', 'updatePage')->name('update.page');
 
        Route::get('/delete/{id}', 'deletePlayer')->name('view.delete');

@@ -56,13 +56,19 @@ class PlayerController extends Controller
     }
 
 
-    public function updatePlayer(){
+    public function updatePlayer(Request $re, $id){
+
         $player = DB::table('players')
-                        ->where('id', 4)
-                        ->decrement('age', 10, ['city' => 'josori']);
+                        ->where('id', $id)
+                        ->update([
+                            'name' =>  $re->playerName,
+                            'email' => $re->playerEmail,
+                            'age' => $re->playerAge,
+                            'city' => $re->playerCity,
+                        ]);
 
         if($player){
-            echo '<h1>Data Add Successfully</h1>';
+            return redirect()->route('home');
         }else{
             echo'<h1>Data Not Added</h1>';
         }

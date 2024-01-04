@@ -12,23 +12,24 @@
     <div class="row">
         <div class="col-4">
               <h1>Update Player Data</h1>
-              <form action="{{ route('') }}" method="POST">
+              <form action="{{ route('update.player', $data->id) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="mb-3">
                     <label for="" class="form-lable">Name</label>
-                    <input type="text" value"{{ $data->name }}"  class="form-control" name="playerName">
+                    <input type="text" value="{{ $data->name }}" class="form-control" name="playerName">
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-lable">Email</label>
-                    <input type="text" value"{{ $data->email }}" class="form-control" name="playerEmail">
+                    <input type="text" value="{{ $data->email }}" class="form-control" name="playerEmail">
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-lable">Age</label>
-                    <input type="text"  value"{{ $data->age }}" class="form-control" name="playerAge">
+                    <input type="text" value="{{ $data->age }}" class="form-control" name="playerAge">
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-lable">City</label>
-                    <input type="text" value"{{ $data->city }}" class="form-control" name="playerCity">
+                    <input type="text" value="{{ $data->city }}" class="form-control" name="playerCity">
                 </div>
                      <button type="submit" class="btn btn-primary btn-sm">Update</button>
               </form>
