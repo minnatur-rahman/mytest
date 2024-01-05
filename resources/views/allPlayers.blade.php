@@ -49,12 +49,12 @@
                     @endforeach
               </table>
               <div class="mt-5">
-                {{$data->links('pagination::bootstrap-5')}}
+                {{$data->links()}}
               </div>
-              <div>
+              {{-- <div>
                 Totat User: {{ $data->total() }}<br>
                 Current Page : {{ $data->currentPage() }}
-              </div>
+              </div> --}}
             </div>
         </div>
     </div>
