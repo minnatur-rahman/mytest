@@ -11,7 +11,8 @@ class PlayerController extends Controller
     public function showPlayer(){
         $players = DB::table('players')
 
-                              ->Paginate(4);
+                              ->Paginate(4)
+                              ->fragment('user');
 
         // return $players;
 
